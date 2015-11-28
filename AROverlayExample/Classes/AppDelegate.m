@@ -23,11 +23,5 @@
   return YES;
 }
 
-- (void)dealloc
-{
-  [window release], window = nil;
-  [viewController release], viewController = nil;
-  [super dealloc];
-}
 
 @end
