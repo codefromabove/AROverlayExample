@@ -36,8 +36,10 @@
 	[scanningLabel setText:@"Scanning..."];
     [scanningLabel setHidden:YES];
 	[[self view] addSubview:scanningLabel];
-  
-	[[captureManager captureSession] startRunning];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[captureManager captureSession] startRunning];
+    });
 }
 
 - (void) scanButtonPressed {
