@@ -38,7 +38,7 @@
 	[[self view] addSubview:scanningLabel];
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[captureManager captureSession] startRunning];
+        [[[self captureManager] captureSession] startRunning];
     });
 }
 
